@@ -1,0 +1,8 @@
+services:
+  optimus:
+    container_name: "optimus"
+    build:
+      context: .
+      dockerfile: optimus.Dockerfile
+    image: "optimus:${DOCKER_TAG}"
+    # restart: unless-stopped
