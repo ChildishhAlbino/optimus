@@ -3,8 +3,8 @@ from os import listdir
 import time
 import logging
 from watchdog.observers import Observer
-from watchdog.events import LoggingEventHandler
-
+# from watchdog.events import LoggingEventHandler
+from handler import OptimusFileSystemHandler
 
 jobs_path = "/jobs"
 files_path = "/files"
@@ -21,7 +21,7 @@ files = listdir(files_path)
 
 logger.info(f"{jobs}, {files}")
 
-event_handler = LoggingEventHandler()
+event_handler = OptimusFileSystemHandler()
 observer = Observer()
 observer.schedule(event_handler, files_path, recursive=True)
 observer.start()
