@@ -4,5 +4,8 @@ services:
     build:
       context: .
       dockerfile: optimus.Dockerfile
+    volumes:
+      - ./volumes/files:/files
+      - ./volumes/jobs:/jobs
     image: "optimus:${DOCKER_TAG}"
     # restart: unless-stopped

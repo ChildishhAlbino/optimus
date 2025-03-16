@@ -1,0 +1,4 @@
+volumes/files/*
+volumes/jobs/*
+!volumes/files/README.md
+!volumes/jobs/README.md
